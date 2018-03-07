@@ -30,8 +30,7 @@ router.get('/items/:id', async (req, res, next) => {
 });
 
 router.post('/items/:id/delete', async (req, res, next) => {
-    console.log(req.params.id);
-    console.log(Item.remove({_id: req.params.id}).exec());
+    Item.remove({_id: req.params.id}).exec();
     res.redirect('/');
 })
 
